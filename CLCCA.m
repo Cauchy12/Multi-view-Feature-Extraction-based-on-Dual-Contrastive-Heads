@@ -1,12 +1,12 @@
 function [P,F]=CLCCA(Xtrain,W,S1,S2,tol,beta)
- V=size(Xtrain,2);%�Ӿ�����
+ V=size(Xtrain,2);%ï¿½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½
  mu=1e-3;
  maxIter=50;
  F(1)=0;
-%[W]=PCA(Xtrain);%������?
+%[W]=PCA(Xtrain);%ï¿½ï¿½ï¿½ï¿½ï¿½Ö?
 [m1,m2]=size(W);
 a=ones(m1,m2);
-%%%%%%%%%%%%%%%%%%%%%%%adam��ʼ��
+%%%%%%%%%%%%%%%%%%%%%%%adamï¿½ï¿½Ê¼ï¿½ï¿½
 e=0.001;
 rho1=0.9;
 rho2=0.999;
@@ -15,7 +15,7 @@ s=0;
 r=0;
 t=0;
  for i=1:maxIter
-     [L,f]=qiudao(Xtrain,W,S1,S2,tol,beta);
+     [L,f]=qiudao_p(Xtrain,W,S1,S2,tol,beta);
      F(i+1)=f;
      C=F(i)-F(i+1);   
      if C<mu&&i>=2
